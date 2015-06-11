@@ -218,6 +218,8 @@
  */
 - (instancetype)initWithRequest:(NSURLRequest *)urlRequest NS_DESIGNATED_INITIALIZER;
 
+- (void)setValue:(NSString *)value forHTTPHeaderField:(NSString *)field;
+
 ///----------------------------------
 /// @name Pausing / Resuming Requests
 ///----------------------------------

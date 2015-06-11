@@ -259,6 +259,13 @@ static inline BOOL AFStateTransitionIsValid(AFOperationState fromState, AFOperat
     return _responseStringEncoding;
 }
 
+- (void)setValue:(NSString *)value forHTTPHeaderField:(NSString *)field
+{
+    NSMutableURLRequest *mutRq = self.request.mutableCopy;
+    [mutRq setValue:value forHTTPHeaderField:field];
+    self.request = mutRq;
+}
+
 - (NSInputStream *)inputStream {
     return self.request.HTTPBodyStream;
 }
